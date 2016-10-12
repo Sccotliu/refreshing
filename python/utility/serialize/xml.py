@@ -32,12 +32,12 @@ class XMLSerialize(object):
         
         self.mainparagraph = self._initializer()
         
-    def __init__(self, doc, rule):
+    def __init__(self, doc, rule, encoding='utf-8'):
         self._doc = doc
         self._rule = rule
         parser = TreeViewXMLParser()
         
-        self.xpath_list = parser.parse_for_treeview(parser.get_file_content(self._doc))
+        self.xpath_list = parser.parse_for_treeview(parser.get_file_content(self._doc, encoding), encoding)
 #         print self.xpath_list
         self.mainparagraph = self._initializer()
         
