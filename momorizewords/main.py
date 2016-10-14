@@ -12,14 +12,15 @@ if __name__ == '__main__':
     engine = pyttsx.init()
     rate = engine.getProperty('rate')
     engine.setProperty('rate', rate - 50)
-    for voice in engine.getProperty('voices'):
-        print '%s age: %s, gender: %s, name: %s' % (voice.id, voice.age, voice.gender, voice.name)
-        engine.setProperty('voice', voice.id)
-        engine.say('Hello, a lot of money')
-        engine.runAndWait()
-#     for word in Word('words.txt'):
-#         print word
-#         engine.say(word)
+#     for voice in engine.getProperty('voices'):
+#         print '%s age: %s, gender: %s, name: %s' % (voice.id, voice.age, voice.gender, voice.name)
+#         engine.setProperty('voice', voice.id)
+#         engine.say('Hello, a lot of money')
 #         engine.runAndWait()
-#         sleep(3)
+    engine.setProperty('voice', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0')
+    for word in Word('words.txt'):
+        print word
+        engine.say(word)
+        engine.runAndWait()
+        sleep(3)
     
